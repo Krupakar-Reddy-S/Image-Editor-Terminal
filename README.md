@@ -49,7 +49,7 @@
 >>```
 >
 >   #### Example Image: DogeCoin.png
->   ![Image]("Assets/DogeCoin.png")
+>   ![Image](/DogeCoin.png)
 >
 > &nbsp;
 

@@ -49,14 +49,14 @@
 >>```
 >
 >   #### Example Image: DogeCoin.png
->   ![Image](/Assets/DogeCoin.png)
+>   <img src="Assets/DogeCoin.png" alt="LeftImage" width="800"/>
 >
 > &nbsp;
 
 &nbsp; 
 
 >   #### 1. convertToGrayScale(BufferedImage input)
->   ![GreyscaleImage](/Assets/GreyScale.png)
+>   <img src="Assets/GreyScale.png" alt="LeftImage" width="600"/>
 >
 > &nbsp;
 
@@ -66,7 +66,7 @@
 >
 > - int Brightness = 50;
 >
->   <img src="Assets/IncreasedBrightness.png" alt="BrightImage" width="1000"/>
+>   <img src="Assets/IncreasedBrightness.png" alt="BrightImage" width="800"/>
 >
 > &nbsp;
 >

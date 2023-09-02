@@ -5,6 +5,16 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 
+class BufferedInt{
+    boolean possible;
+    BufferedImage OutputImage;
+
+    public BufferedInt(BufferedImage OutputImage, boolean possible){
+        this.possible = possible;
+        this.OutputImage = OutputImage;
+    }
+}
+
 public class ImageEditor {
 
     public static BufferedImage convertToGrayscale(BufferedImage input) {
@@ -187,6 +197,36 @@ public class ImageEditor {
         return OutputImage;
     }
 
+    public static BufferedInt cropImage(BufferedImage input, int x, int y, int Height, int Width) {
+        int height = input.getHeight();
+        int width = input.getWidth();
+
+        BufferedImage OutputImage = new BufferedImage(Width, Height, BufferedImage.TYPE_3BYTE_BGR);
+        boolean Possible = true;
+
+        BufferedInt Output = new BufferedInt(OutputImage, Possible);
+
+        if(! (x < height && x > 0) && (y < width && y > 0)){
+            Possible = false;
+            return Output;
+        }
+
+        else if(! (Height < height && Height > 0) && (Width < width && Width > 0)){
+            Possible = false;
+            return Output;
+        }
+
+        else{
+            for (int i = x; i < Height; i++) {
+                for (int j = y; j < Width; j++) {
+                    OutputImage.setRGB(j, i, input.getRGB(j, i));
+                }
+            }
+
+            return Output;
+        }
+    }
+
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
@@ -270,7 +310,32 @@ public class ImageEditor {
                     BufferedImage ColourInvertedImage = colourInvert(inputImage);
                     ImageIO.write(ColourInvertedImage, FileExtension, OutputImage);
                     break;
-                
+
+                case 8:
+                    System.out.print("Enter X coordinate to start Cropping from: ");
+                    int x = sc.nextInt();
+
+                    System.out.print("Enter Y coordinate to start Cropping from: ");
+                    int y = sc.nextInt();
+
+                    System.out.print("Enter Height of Image to Crop: ");
+                    int Height = sc.nextInt();
+
+                    System.out.print("Enter Width of Image to Crop: ");
+                    int Width = sc.nextInt();
+
+                    BufferedInt CroppedImage = cropImage(inputImage, x, y, Height, Width);
+
+                    if(CroppedImage.possible){
+                        ImageIO.write(CroppedImage.OutputImage, FileExtension, OutputImage);
+                        break;
+                    }
+
+                    else{
+                        System.out.println("Please Enter Valid Coordinate and Dimension values!");
+                        break;
+                    }
+
                 case 10:
                     System.out.println("Successfully Exited Image Editor.");
                     break;

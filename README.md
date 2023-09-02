@@ -56,7 +56,7 @@
 &nbsp; 
 
 >   #### 1. convertToGrayScale(BufferedImage input)
->   <img src="Assets/GreyScale.png" alt="LeftImage" width="600"/>
+>   <img src="Assets/GreyScale.png" alt="LeftImage" width="700"/>
 >
 > &nbsp;
 
@@ -79,28 +79,28 @@
 &nbsp;
 
 >   #### 3. leftRotate(BufferedImage input)
->   <img src="Assets/RotatedLeft.png" alt="LeftImage" width="600"/>
+>   <img src="Assets/RotatedLeft.png" alt="LeftImage" width="500"/>
 >
 > &nbsp;
 
 &nbsp;
 
 >   #### 4. rightRotate(BufferedImage input)
->   <img src="Assets/RotatedRight.png" alt="RightImage" width="600"/>
+>   <img src="Assets/RotatedRight.png" alt="RightImage" width="500"/>
 >
 > &nbsp;
 
 &nbsp;
 
 >   #### 5. verticalInvert(BufferedImage input)
->   <img src="Assets/VerticallyInverted.png" alt="VerticalImage" width="1000"/>
+>   <img src="Assets/VerticallyInverted.png" alt="VerticalImage" width="800"/>
 >
 > &nbsp;
 
 &nbsp;
 
 >   #### 6. horizontalInvert(BufferedImage input)
->   <img src="Assets/HorizontallyInverted.png" alt="HorizontalImage" width="1000"/>
+>   <img src="Assets/HorizontallyInverted.png" alt="HorizontalImage" width="800"/>
 >
 > &nbsp;
 
@@ -110,13 +110,13 @@
 >
 > - int pixels = 5;
 >
->   <img src="Assets/MosaicBlur5.png" alt="Blur5Image" width="1000"/>
+>   <img src="Assets/MosaicBlur5.png" alt="Blur5Image" width="800"/>
 >
 > &nbsp;
 >
 > - int pixels = 10;
 >
->   <img src="Assets/MosaicBlur10.png" alt="Blur10Image" width="1000"/>
+>   <img src="Assets/MosaicBlur10.png" alt="Blur10Image" width="800"/>
 >
 > &nbsp;
 

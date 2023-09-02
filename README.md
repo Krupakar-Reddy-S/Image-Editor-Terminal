@@ -72,14 +72,14 @@
 >
 > - int Brightness = -50;
 >
->   <img src="Assets/DecreasedBrightness.png" alt="DullImage" width="1000"/>
+>   <img src="Assets/DecreasedBrightness.png" alt="DullImage" width="800"/>
 >
 > &nbsp;
 
 &nbsp;
 
 >   #### 3. leftRotate(BufferedImage input)
->   <img src="Assets/RotatedLeft.png" alt="LeftImage" width="800"/>
+>   <img src="Assets/RotatedLeft.png" alt="LeftImage" width="600"/>
 >
 > &nbsp;
 

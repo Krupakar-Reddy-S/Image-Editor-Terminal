@@ -3,13 +3,17 @@
 
  This [Image Editor](https://github.com/Krupakar-Reddy-S/Image-Editor-Terminal "Link to Github Repo") is terminal based, where given an image file path and operation it outputs an image with the operation applied to it.
 
+&nbsp;
 
+## Supported Operations
 - Convert Image to GrayScale
 - Change Image Brightness
 - Rotate Image
 - Flip Image
 - Blur Image
+- :cool: Bonus: File Output Format is same as Input Image Format!
 
+&nbsp;
 ## Imported Classes:
 >
 > &nbsp;
@@ -30,8 +34,11 @@
 >
 > &nbsp;
 
+ &nbsp;
 ## Functions to perform Operations:
+ &nbsp;
 > ### Basic Image File Code, And creating a BufferedImage to pass example image to below mentioned methods
+> &nbsp;
 >
 >>```java
 >> File inputFile = new File("DogeCoin.png");
@@ -49,6 +56,7 @@
 >> }
 >>```
 >
+> &nbsp;
 >   #### Example Image: DogeCoin.png
 >   <img src="Assets/DogeCoin.png" alt="LeftImage" width="800"/>
 >

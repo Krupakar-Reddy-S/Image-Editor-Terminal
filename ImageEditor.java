@@ -120,7 +120,7 @@ public class ImageEditor {
     public static BufferedImage mosaicBlur(BufferedImage input, int pixels) {
         int height = input.getHeight();
         int width = input.getWidth();
-        BufferedImage outputImage = new BufferedImage(width, height, BufferedImage.TYPE_3BYTE_BGR);
+        BufferedImage OutputImage = new BufferedImage(width, height, BufferedImage.TYPE_3BYTE_BGR);
     
         for (int i = 0; i < height / pixels; i++) {
             for (int j = 0; j < width / pixels; j++) {
@@ -145,13 +145,46 @@ public class ImageEditor {
                 for (int k = i * pixels; k < i * pixels + pixels; k++) {
                     for (int l = j * pixels; l < j * pixels + pixels; l++) {
                         Color newPixel = new Color(finalRed, finalGreen, finalBlue);
-                        outputImage.setRGB(l, k, newPixel.getRGB());
+                        OutputImage.setRGB(l, k, newPixel.getRGB());
                     }
                 }
             }
         }
     
-        return outputImage;
+        return OutputImage;
+    }
+
+    public static BufferedImage colourInvert(BufferedImage input) {
+        int height = input.getHeight();
+        int width = input.getWidth();
+        BufferedImage OutputImage = new BufferedImage(width, height, BufferedImage.TYPE_3BYTE_BGR);
+        for (int i = 0; i < height; i++) {
+            for (int j = 0; j < width; j++) {
+                Color pixel = new Color(input.getRGB(j, i));
+                int red = pixel.getRed();
+                int  blue = pixel.getBlue();
+                int  green = pixel.getGreen();
+
+                red = 255 - red;
+                green = 255 - green;
+                blue = 255 - blue;
+
+                if(red < 0){
+                    red = 0;
+                }
+                if(green < 0){
+                    green = 0;
+                }
+                if(blue < 0){
+                    blue = 0;
+                }
+
+                Color newPixel = new Color(red, green, blue);
+                OutputImage.setRGB(j, i, newPixel.getRGB());
+            }
+        }
+
+        return OutputImage;
     }
 
     public static void main(String[] args) {
@@ -166,6 +199,11 @@ public class ImageEditor {
         File inputFile = new File(ImagePath);
         try {
             BufferedImage inputImage = ImageIO.read(inputFile);
+            int imageHeight = inputImage.getHeight();
+            int imageWidth = inputImage.getWidth();
+
+            System.out.println();
+            System.out.println("The Dimension of The Given Image(Height X Width): " + imageHeight + " X " + imageWidth);
             File OutputImage = new File("OutputImage." + FileExtension);
             
             System.out.println();
@@ -175,6 +213,8 @@ public class ImageEditor {
             System.out.println("4. Invert Image Vertically");
             System.out.println("5. Invert Image Horizontally");
             System.out.println("6. Blur Image");
+            System.out.println("7. Invert Image Colour");
+            System.out.println("10. Exit");
             System.out.println();
 
             System.out.print("Enter the Operation to perform: ");
@@ -225,7 +265,16 @@ public class ImageEditor {
                     BufferedImage BlurredImage = mosaicBlur(inputImage, Pixels);
                     ImageIO.write(BlurredImage, FileExtension, OutputImage);
                     break;
+
+                case 7:
+                    BufferedImage ColourInvertedImage = colourInvert(inputImage);
+                    ImageIO.write(ColourInvertedImage, FileExtension, OutputImage);
+                    break;
                 
+                case 10:
+                    System.out.println("Successfully Exited Image Editor.");
+                    break;
+
                 default:
                     ImageIO.write(inputImage, FileExtension, OutputImage);
                     break;

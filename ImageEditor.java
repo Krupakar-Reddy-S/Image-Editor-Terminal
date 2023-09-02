@@ -227,6 +227,46 @@ public class ImageEditor {
         }
     }
 
+    public static BufferedImage colourFilter(BufferedImage input, boolean R, boolean G, boolean B) {
+        int height = input.getHeight();
+        int width = input.getWidth();
+        BufferedImage OutputImage = new BufferedImage(width, height, BufferedImage.TYPE_3BYTE_BGR);
+
+        int red = 0;
+        int green = 0;
+        int blue = 0;
+
+        if(R){
+            red = 1;
+        }
+        if(G){
+            blue = 1;
+        }
+        if(B){
+            green = 1;
+        }
+
+        for (int i = 0; i < height; i++) {
+            for (int j = 0; j < width; j++) {
+                Color pixel = new Color(input.getRGB(j, i));
+
+                if(red != 0){
+                    red = pixel.getRed();
+                }
+                if(green != 0){
+                    green = pixel.getGreen();
+                }
+                if(blue != 0){
+                    blue = pixel.getBlue();
+                }
+
+                Color newPixel = new Color(red, green, blue);
+                OutputImage.setRGB(j, i, newPixel.getRGB());
+            }
+        }
+        return OutputImage;
+    }
+
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
@@ -254,6 +294,8 @@ public class ImageEditor {
             System.out.println("5. Invert Image Horizontally");
             System.out.println("6. Blur Image");
             System.out.println("7. Invert Image Colour");
+            System.out.println("8. Crop Image");
+            System.out.println("9. Colour Filter");
             System.out.println("10. Exit");
             System.out.println();
 
@@ -335,6 +377,34 @@ public class ImageEditor {
                         System.out.println("Please Enter Valid Coordinate and Dimension values!");
                         break;
                     }
+                
+                case 9:
+                    System.out.print("Enter 1 to keep Image's Red value: ");
+                    int Red = sc.nextInt();
+
+                    System.out.print("Enter 1 to keep Image's Green value: ");
+                    int Green = sc.nextInt();
+
+                    System.out.print("Enter 1 to keep Image's Blue value: ");
+                    int Blue = sc.nextInt();
+
+                    boolean R = false;
+                    boolean G = false;
+                    boolean B = false;
+
+                    if(Red == 1){
+                        R = true;
+                    }
+                    if(Green == 1){
+                        G = true;
+                    }
+                    if(Blue == 1){
+                        B = true;
+                    }
+
+                    BufferedImage ColourFilteredImage = colourFilter(inputImage, R, B, G);
+                    ImageIO.write(ColourFilteredImage, FileExtension, OutputImage);
+                    break;
 
                 case 10:
                     System.out.println("Successfully Exited Image Editor.");

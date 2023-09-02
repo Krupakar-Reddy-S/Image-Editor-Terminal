@@ -1,6 +1,7 @@
  # Image Editor Terminal Version
+ ### By: Krupakar Reddy S
 
- This image editor is terminal based, where given an image file path and operation it outputs an image with the operation applied to it.
+ This [Image Editor](https://github.com/Krupakar-Reddy-S/Image-Editor-Terminal "Link to Github Repo") is terminal based, where given an image file path and operation it outputs an image with the operation applied to it.
 
 
 - Convert Image to GrayScale

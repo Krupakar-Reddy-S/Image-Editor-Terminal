@@ -7,6 +7,18 @@ import java.awt.image.BufferedImage;
 
 public class ImageEditor {
 
+    public static BufferedImage convertToGrayscale(BufferedImage input) {
+        int height = input.getHeight();
+        int width = input.getWidth();
+        BufferedImage OutputImage = new BufferedImage(width, height, BufferedImage.TYPE_BYTE_GRAY);
+        for (int i = 0; i < height; i++) {
+            for (int j = 0; j < width; j++) {
+                OutputImage.setRGB(j, i, input.getRGB(j, i));
+            }
+        }
+        return OutputImage;
+    }
+
     public static BufferedImage changeBrightness(BufferedImage input, int Brightness) {
         int height = input.getHeight();
         int width = input.getWidth();
@@ -34,18 +46,6 @@ public class ImageEditor {
                     blue = 0;
                 Color newpixel = new Color(red, green, blue);
                 OutputImage.setRGB(j, i, newpixel.getRGB());
-            }
-        }
-        return OutputImage;
-    }
-
-    public static BufferedImage convertToGrayscale(BufferedImage input) {
-        int height = input.getHeight();
-        int width = input.getWidth();
-        BufferedImage OutputImage = new BufferedImage(width, height, BufferedImage.TYPE_BYTE_GRAY);
-        for (int i = 0; i < height; i++) {
-            for (int j = 0; j < width; j++) {
-                OutputImage.setRGB(j, i, input.getRGB(j, i));
             }
         }
         return OutputImage;
@@ -160,7 +160,7 @@ public class ImageEditor {
         System.out.println();
         System.out.print("Enter the path of image file: ");
 
-        String ImagePath = sc.next();
+        String ImagePath = sc.nextLine();
         String FileExtension = ImagePath.substring(ImagePath.lastIndexOf(".") + 1);
 
         File inputFile = new File(ImagePath);
@@ -227,8 +227,8 @@ public class ImageEditor {
                     break;
                 
                 default:
+                    ImageIO.write(inputImage, FileExtension, OutputImage);
                     break;
-
             }
         } 
 

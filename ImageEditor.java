@@ -292,7 +292,7 @@ public class ImageEditor {
             System.out.println("3. Rotate Image");
             System.out.println("4. Invert Image Vertically");
             System.out.println("5. Invert Image Horizontally");
-            System.out.println("6. Blur Image");
+            System.out.println("6. Apply Mosaic Blur");
             System.out.println("7. Invert Image Colour");
             System.out.println("8. Crop Image");
             System.out.println("9. Colour Filter");

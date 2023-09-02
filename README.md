@@ -2,7 +2,6 @@
 
  This image editor is terminal based, where given an image file path and operation it outputs an image with the operation applied to it.
 
-## It features different operations like:
 
 - Convert Image to GrayScale
 - Change Image Brightness
@@ -17,7 +16,6 @@
 > File is a Sub-Class of Class io, It gives access to a file's provided it's path so the data from a file can be used to perform required operations, it throws exception if file is not present or path is invalid.
 > &nbsp;
 >
-> ### 2. javax.imageio.ImageIO
 > - #### ImageIO.read(File input)
 >   This Method of Class ImageIO accepts an image File as input and it's data can be accesed and manipulated and throws exception if file is not an Image.
 > - #### ImageIO.read(File input)
@@ -51,14 +49,14 @@
 >>```
 >
 >   #### Example Image: DogeCoin.png
->   <img src="Assets/dogecoin.png" alt="Image" width="400"/>
+>   ![Image]("Assets/DogeCoin.png")
 >
 > &nbsp;
 
 &nbsp; 
 
 >   #### 1. convertToGrayScale(BufferedImage input)
->   <img src="Assets/GreyScale.png" alt="Image" width="400"/>
+>   <img src="Assets/GreyScale.png" alt="GrayscaleImage" width="400"/>
 >
 > &nbsp;
 

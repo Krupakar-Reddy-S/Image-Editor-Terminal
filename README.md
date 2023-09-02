@@ -56,7 +56,7 @@
 &nbsp; 
 
 >   #### 1. convertToGrayScale(BufferedImage input)
->   <img src="Assets/GreyScale.png" alt="LeftImage" width="700"/>
+>   <img src="Assets/GreyScale.png" alt="LeftImage" width="800"/>
 >
 > &nbsp;
 

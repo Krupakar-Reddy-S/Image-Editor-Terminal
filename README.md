@@ -49,14 +49,14 @@
 >>```
 >
 >   #### Example Image: DogeCoin.png
->   ![Image](/DogeCoin.png)
+>   ![Image](/Assets/DogeCoin.png)
 >
 > &nbsp;
 
 &nbsp; 
 
 >   #### 1. convertToGrayScale(BufferedImage input)
->   <img src="Assets/GreyScale.png" alt="GrayscaleImage" width="400"/>
+>   ![GreyscaleImage](/Assets/GreyScale.png)
 >
 > &nbsp;
 
@@ -66,41 +66,41 @@
 >
 > - int Brightness = 50;
 >
->   <img src="Assets/IncreasedBrightness.png" alt="BrightImage" width="400"/>
+>   <img src="Assets/IncreasedBrightness.png" alt="BrightImage" width="600"/>
 >
 > &nbsp;
 >
 > - int Brightness = -50;
 >
->   <img src="Assets/DecreasedBrightness.png" alt="DullImage" width="400"/>
+>   <img src="Assets/DecreasedBrightness.png" alt="DullImage" width="600"/>
 >
 > &nbsp;
 
 &nbsp;
 
 >   #### 3. leftRotate(BufferedImage input)
->   <img src="Assets/RotatedLeft.png" alt="LeftImage" width="300"/>
+>   <img src="Assets/RotatedLeft.png" alt="LeftImage" width="400"/>
 >
 > &nbsp;
 
 &nbsp;
 
 >   #### 4. rightRotate(BufferedImage input)
->   <img src="Assets/RotatedRight.png" alt="RightImage" width="300"/>
+>   <img src="Assets/RotatedRight.png" alt="RightImage" width="400"/>
 >
 > &nbsp;
 
 &nbsp;
 
 >   #### 5. verticalInvert(BufferedImage input)
->   <img src="Assets/VerticallyInverted.png" alt="VerticalImage" width="400"/>
+>   <img src="Assets/VerticallyInverted.png" alt="VerticalImage" width="600"/>
 >
 > &nbsp;
 
 &nbsp;
 
 >   #### 6. horizontalInvert(BufferedImage input)
->   <img src="Assets/HorizontallyInverted.png" alt="HorizontalImage" width="400"/>
+>   <img src="Assets/HorizontallyInverted.png" alt="HorizontalImage" width="600"/>
 >
 > &nbsp;
 
@@ -110,13 +110,13 @@
 >
 > - int pixels = 5;
 >
->   <img src="Assets/MosaicBlur5.png" alt="Blur5Image" width="400"/>
+>   <img src="Assets/MosaicBlur5.png" alt="Blur5Image" width="600"/>
 >
 > &nbsp;
 >
 > - int pixels = 10;
 >
->   <img src="Assets/MosaicBlur10.png" alt="Blur10Image" width="400"/>
+>   <img src="Assets/MosaicBlur10.png" alt="Blur10Image" width="600"/>
 >
 > &nbsp;
 

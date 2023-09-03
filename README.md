@@ -58,14 +58,14 @@
 >
 > &nbsp;
 >   #### Example Image: DogeCoin.png
->   <img src="Assets/DogeCoin.png" alt="LeftImage" width="800"/>
+>   <img src="Assets/DogeCoin.png" alt="LeftImage" width="600"/>
 >
 > &nbsp;
 
 &nbsp; 
 
 >   #### 1. convertToGrayScale(BufferedImage input)
->   <img src="Assets/GreyScale.png" alt="LeftImage" width="800"/>
+>   <img src="Assets/GreyScale.png" alt="LeftImage" width="600"/>
 >
 > &nbsp;
 
@@ -75,41 +75,41 @@
 >
 > - int Brightness = 50;
 >
->   <img src="Assets/IncreasedBrightness.png" alt="BrightImage" width="800"/>
+>   <img src="Assets/IncreasedBrightness.png" alt="BrightImage" width="600"/>
 >
 > &nbsp;
 >
 > - int Brightness = -50;
 >
->   <img src="Assets/DecreasedBrightness.png" alt="DullImage" width="800"/>
+>   <img src="Assets/DecreasedBrightness.png" alt="DullImage" width="600"/>
 >
 > &nbsp;
 
 &nbsp;
 
 >   #### 3. leftRotate(BufferedImage input)
->   <img src="Assets/RotatedLeft.png" alt="LeftImage" width="500"/>
+>   <img src="Assets/RotatedLeft.png" alt="LeftImage" width="400"/>
 >
 > &nbsp;
 
 &nbsp;
 
 >   #### 4. rightRotate(BufferedImage input)
->   <img src="Assets/RotatedRight.png" alt="RightImage" width="500"/>
+>   <img src="Assets/RotatedRight.png" alt="RightImage" width="400"/>
 >
 > &nbsp;
 
 &nbsp;
 
 >   #### 5. verticalInvert(BufferedImage input)
->   <img src="Assets/VerticallyInverted.png" alt="VerticalImage" width="800"/>
+>   <img src="Assets/VerticallyInverted.png" alt="VerticalImage" width="600"/>
 >
 > &nbsp;
 
 &nbsp;
 
 >   #### 6. horizontalInvert(BufferedImage input)
->   <img src="Assets/HorizontallyInverted.png" alt="HorizontalImage" width="800"/>
+>   <img src="Assets/HorizontallyInverted.png" alt="HorizontalImage" width="600"/>
 >
 > &nbsp;
 
@@ -119,15 +119,78 @@
 >
 > - int pixels = 5;
 >
->   <img src="Assets/MosaicBlur5.png" alt="Blur5Image" width="800"/>
+>   <img src="Assets/MosaicBlur5.png" alt="Blur5Image" width="600"/>
 >
 > &nbsp;
 >
 > - int pixels = 10;
 >
->   <img src="Assets/MosaicBlur10.png" alt="Blur10Image" width="800"/>
+>   <img src="Assets/MosaicBlur10.png" alt="Blur10Image" width="600"/>
 >
 > &nbsp;
 
 &nbsp;
 
+>   #### 8. colourInvert(BufferedImage input)
+>   <img src="Assets/ColourInverted.png" alt="HorizontalImage" width="600"/>
+>
+> &nbsp;
+
+&nbsp;
+
+>   #### 9. colourFilter(BufferedImage input, boolean R, boolean G, boolean B)
+>
+> - boolean R = true; 
+>   boolean G = false;
+>   boolean B = false; 
+>   
+>
+>   <img src="Assets/RedFilter.png" alt="BrightImage" width="600"/>
+>
+> &nbsp;
+>
+> - boolean R = false; 
+>   boolean G = true;
+>   boolean B = false; 
+>   
+>
+>   <img src="Assets/GreenFilter.png" alt="BrightImage" width="600"/>
+>
+> &nbsp;
+> 
+> - boolean R = false; 
+>   boolean G = false;
+>   boolean B = true; 
+>   
+>
+>   <img src="Assets/BlueFilter.png" alt="BrightImage" width="600"/>
+>
+> &nbsp;
+>
+> - boolean R = true; 
+>   boolean G = true;
+>   boolean B = false; 
+>   
+>
+>   <img src="Assets/RedGreenFilter.png" alt="BrightImage" width="600"/>
+>
+> &nbsp;
+>
+> - boolean R = true; 
+>   boolean G = false;
+>   boolean B = true; 
+>   
+>
+>   <img src="Assets/RedBlueFilter.png" alt="BrightImage" width="600"/>
+>
+> &nbsp;
+> 
+> - boolean R = false; 
+>   boolean G = true;
+>   boolean B = true; 
+>   
+>
+>   <img src="Assets/GreenBlueFilter.png" alt="BrightImage" width="600"/>
+>
+
+&nbsp;

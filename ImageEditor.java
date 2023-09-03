@@ -310,9 +310,9 @@ public class ImageEditor {
         }
 
         else{
-            for (int i = x; i < Height; i++) {
-                for (int j = y; j < Width; j++) {
-                    OutputImage.setRGB(j, i, input.getRGB(j, i));
+            for (int i = x; i < x + Height; i++) {
+                for (int j = y; j < y + Width; j++) {
+                    OutputImage.setRGB(j - y, i - x, input.getRGB(j, i));
                 }
             }
 

@@ -32,16 +32,18 @@
 >   This Method of Class ImageIO creates an image File in Current Working Directory if not exits, else it Over-Writes the File with new data as provided.
 >
 > ### 3. java.awt.image.BufferedImage
-> The Class BufferedImage can be used to access and manipulate the pixels and its RGB values from an image File.
+> The Class BufferedImage can be used to access and manipulate pixels and the RGB values from an image File.
 >
 > ### 4. java.awt.Color(int rgb)
 > This Class accepts a combined int of RGB values of a Pixel and can be used to return a individual color value using the methods: getRed(), getGreen(), getBlue().
 >
 > &nbsp;
 
- &nbsp;
+&nbsp;
+
 ## Functions to perform Operations:
- &nbsp;
+&nbsp;
+
 > ### Basic Image File Code, And creating a BufferedImage to pass example image to below mentioned methods
 > &nbsp;
 >
@@ -69,7 +71,6 @@
 
 &nbsp; 
 
-> &nbsp;
 >   #### 1. convertToGrayScale(BufferedImage input)
 >   <img src="Assets/GreyScale.png" alt="LeftImage" width="600"/>
 >
@@ -160,7 +161,74 @@
 
 &nbsp;
 
->   #### 10. colourFilter(BufferedImage input, boolean R, boolean G, boolean B)
+>   #### 10. cropImage(BufferedImage input, int x, int y, int Height, int Width)
+>
+>   1. int x = 0;\
+>   int y = 0;\
+>   int height = 400;\
+>   int width = 600; 
+>   
+>
+>   <img src="Assets/CropQ1Image.png" alt="RedImage" width="600"/>
+>
+> &nbsp;
+>
+>   2. int x = 0;\
+>   int y = 600;\
+>   int height = 400;\
+>   int width = 600; 
+>   
+>
+>   <img src="Assets/CropQ2Image.png" alt="RedImage" width="600"/>
+>
+> &nbsp;
+>
+>   3. int x = 400;\
+>   int y = 600;\
+>   int height = 400;\
+>   int width = 600; 
+>   
+>
+>   <img src="Assets/CropQ3Image.png" alt="RedImage" width="600"/>
+>
+> &nbsp;
+>
+>   4. int x = 400;\
+>   int y = 0;\
+>   int height = 400;\
+>   int width = 600; 
+>   
+>
+>   <img src="Assets/CropQ4Image.png" alt="RedImage" width="600"/>
+>
+> &nbsp;
+>
+>   5. int x = 0;\
+>   int y = 0;\
+>   int height = 400;\
+>   int width = 1200; 
+>
+> &nbsp;
+>
+>   <img src="Assets/CropH1Image.png" alt="RedImage" width="600"/>
+>
+> &nbsp;
+>
+>   6. int x = 400;\
+>   int y = 0;\
+>   int height = 400;\
+>   int width = 1200; 
+>   
+> &nbsp;
+>
+>   <img src="Assets/CropH2Image.png" alt="RedImage" width="600"/>
+>
+> &nbsp;
+
+
+&nbsp;
+
+>   #### 11. colourFilter(BufferedImage input, boolean R, boolean G, boolean B)
 >
 > - boolean R = true; 
 >   boolean G = false;

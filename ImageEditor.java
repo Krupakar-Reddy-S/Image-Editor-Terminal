@@ -5,11 +5,11 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 
-class BufferedInt{
+class BufferedInt {
     boolean possible;
     BufferedImage OutputImage;
 
-    public BufferedInt(BufferedImage OutputImage, boolean possible){
+    public BufferedInt(BufferedImage OutputImage, boolean possible) {
         this.possible = possible;
         this.OutputImage = OutputImage;
     }
@@ -44,22 +44,22 @@ public class ImageEditor {
                 green += Brightness;
                 blue += Brightness;
 
-                if (red > 255){
+                if (red > 255) {
                     red = 255;
                 }
-                if (green > 255){
+                if (green > 255) {
                     green = 255;
                 }
-                if (blue > 255){
+                if (blue > 255) {
                     blue = 255;
                 }
-                if (red < 0){
+                if (red < 0) {
                     red = 0;
                 }
-                if (green < 0){
+                if (green < 0) {
                     green = 0;
                 }
-                if (blue < 0){
+                if (blue < 0) {
                     blue = 0;
                 }
 
@@ -70,7 +70,7 @@ public class ImageEditor {
         return OutputImage;
     }
 
-    public static BufferedImage changeContrast(BufferedImage input,int value) {
+    public static BufferedImage changeContrast(BufferedImage input, int value) {
         int height = input.getHeight();
         int width = input.getWidth();
         BufferedImage OutputImage = new BufferedImage(width, height, BufferedImage.TYPE_3BYTE_BGR);
@@ -79,8 +79,8 @@ public class ImageEditor {
         int green = 0;
         int blue = 0;
 
-        for(int i = 0; i < height; i++){
-            for(int j = 0; j < width; j++){
+        for (int i = 0; i < height; i++) {
+            for (int j = 0; j < width; j++) {
                 Color pixel = new Color(input.getRGB(j, i));
 
                 red += pixel.getRed();
@@ -89,59 +89,56 @@ public class ImageEditor {
             }
         }
 
-        int avgRed = red/ height * width;
-        int avgGreen = green/ height * width;
-        int avgBlue = blue/ height * width;
+        int avgRed = red / height * width;
+        int avgGreen = green / height * width;
+        int avgBlue = blue / height * width;
 
-        for(int i = 0; i < height; i++){
-            for(int j = 0; j < width; j++){
+        for (int i = 0; i < height; i++) {
+            for (int j = 0; j < width; j++) {
                 Color pixel = new Color(input.getRGB(j, i));
                 red = pixel.getRed();
                 green = pixel.getGreen();
                 blue = pixel.getBlue();
 
-                if(red + green + blue == 765){
+                if (red + green + blue == 765) {
                     OutputImage.setRGB(j, i, pixel.getRGB());
                 }
 
-                else{
-                    if(red > avgRed){
+                else {
+                    if (red > avgRed) {
                         red += value;
-                    }
-                    else{
+                    } else {
                         red -= value;
                     }
 
-                    if(green > avgGreen){
+                    if (green > avgGreen) {
                         green += value;
-                    }
-                    else{
+                    } else {
                         green -= value;
                     }
 
-                    if(blue > avgBlue){
+                    if (blue > avgBlue) {
                         blue += value;
-                    }
-                    else{
+                    } else {
                         blue -= value;
                     }
 
-                    if (red > 255){
+                    if (red > 255) {
                         red = 255;
                     }
-                    if (green > 255){
+                    if (green > 255) {
                         green = 255;
                     }
-                    if (blue > 255){
+                    if (blue > 255) {
                         blue = 255;
                     }
-                    if (red < 0){
+                    if (red < 0) {
                         red = 0;
                     }
-                    if (green < 0){
+                    if (green < 0) {
                         green = 0;
                     }
-                    if (blue < 0){
+                    if (blue < 0) {
                         blue = 0;
                     }
 
@@ -197,7 +194,7 @@ public class ImageEditor {
     public static BufferedImage verticalInvert(BufferedImage input) {
         int height = input.getHeight();
         int width = input.getWidth();
-        BufferedImage OutputImage = new BufferedImage(width, height,BufferedImage.TYPE_3BYTE_BGR);
+        BufferedImage OutputImage = new BufferedImage(width, height, BufferedImage.TYPE_3BYTE_BGR);
         for (int j = 0; j < width; j++) {
             for (int i = 0; i < height / 2; i++) {
                 Color temp = new Color(input.getRGB(j, i));
@@ -224,14 +221,14 @@ public class ImageEditor {
         int height = input.getHeight();
         int width = input.getWidth();
         BufferedImage OutputImage = new BufferedImage(width, height, BufferedImage.TYPE_3BYTE_BGR);
-    
+
         for (int i = 0; i < height / pixels; i++) {
             for (int j = 0; j < width / pixels; j++) {
-    
+
                 int red = 0;
                 int green = 0;
                 int blue = 0;
-    
+
                 for (int k = i * pixels; k < i * pixels + pixels; k++) {
                     for (int l = j * pixels; l < j * pixels + pixels; l++) {
                         Color pixel = new Color(input.getRGB(l, k));
@@ -240,11 +237,11 @@ public class ImageEditor {
                         green += pixel.getGreen();
                     }
                 }
-    
+
                 int finalRed = red / (pixels * pixels);
                 int finalGreen = green / (pixels * pixels);
                 int finalBlue = blue / (pixels * pixels);
-    
+
                 for (int k = i * pixels; k < i * pixels + pixels; k++) {
                     for (int l = j * pixels; l < j * pixels + pixels; l++) {
                         Color newPixel = new Color(finalRed, finalGreen, finalBlue);
@@ -253,7 +250,7 @@ public class ImageEditor {
                 }
             }
         }
-    
+
         return OutputImage;
     }
 
@@ -265,20 +262,20 @@ public class ImageEditor {
             for (int j = 0; j < width; j++) {
                 Color pixel = new Color(input.getRGB(j, i));
                 int red = pixel.getRed();
-                int  blue = pixel.getBlue();
-                int  green = pixel.getGreen();
+                int blue = pixel.getBlue();
+                int green = pixel.getGreen();
 
                 red = 255 - red;
                 green = 255 - green;
                 blue = 255 - blue;
 
-                if(red < 0){
+                if (red < 0) {
                     red = 0;
                 }
-                if(green < 0){
+                if (green < 0) {
                     green = 0;
                 }
-                if(blue < 0){
+                if (blue < 0) {
                     blue = 0;
                 }
 
@@ -299,17 +296,17 @@ public class ImageEditor {
 
         BufferedInt Output = new BufferedInt(OutputImage, Possible);
 
-        if(! (x < height && x > 0) && (y < width && y > 0)){
+        if (!(x < height && x > 0) && (y < width && y > 0)) {
             Possible = false;
             return Output;
         }
 
-        else if(! (Height < height && Height > 0) && (Width < width && Width > 0)){
+        else if (!(Height < height && Height > 0) && (Width < width && Width > 0)) {
             Possible = false;
             return Output;
         }
 
-        else{
+        else {
             for (int i = x; i < x + Height; i++) {
                 for (int j = y; j < y + Width; j++) {
                     OutputImage.setRGB(j - y, i - x, input.getRGB(j, i));
@@ -329,13 +326,13 @@ public class ImageEditor {
         int green = 0;
         int blue = 0;
 
-        if(R){
+        if (R) {
             red = 1;
         }
-        if(G){
+        if (G) {
             blue = 1;
         }
-        if(B){
+        if (B) {
             green = 1;
         }
 
@@ -343,13 +340,13 @@ public class ImageEditor {
             for (int j = 0; j < width; j++) {
                 Color pixel = new Color(input.getRGB(j, i));
 
-                if(red != 0){
+                if (red != 0) {
                     red = pixel.getRed();
                 }
-                if(green != 0){
+                if (green != 0) {
                     green = pixel.getGreen();
                 }
-                if(blue != 0){
+                if (blue != 0) {
                     blue = pixel.getBlue();
                 }
 
@@ -378,7 +375,7 @@ public class ImageEditor {
             System.out.println();
             System.out.println("The Dimension of The Given Image(Height X Width): " + imageHeight + " X " + imageWidth);
             File OutputImage = new File("OutputImage." + FileExtension);
-            
+
             System.out.println();
             System.out.println("1. Convert Image to Grayscale");
             System.out.println("2. Change Image Brightness");
@@ -395,7 +392,7 @@ public class ImageEditor {
 
             System.out.print("Enter the Operation to perform: ");
             int Operation = sc.nextInt();
-            switch (Operation){
+            switch (Operation) {
 
                 case 1:
                     BufferedImage GreyScaleImage = convertToGrayscale(inputImage);
@@ -422,16 +419,14 @@ public class ImageEditor {
                     if (Direction == 1) {
                         BufferedImage RotatedImage = rightRotate(inputImage);
                         ImageIO.write(RotatedImage, FileExtension, OutputImage);
-                    }
-                    else if (Direction == 2) {
+                    } else if (Direction == 2) {
                         BufferedImage RotatedImage = leftRotate(inputImage);
                         ImageIO.write(RotatedImage, FileExtension, OutputImage);
-                    }
-                    else{
+                    } else {
                         System.out.println("Enter Either 1 or 2 Only!");
                     }
                     break;
-                
+
                 case 5:
                     BufferedImage VerticalImage = verticalInvert(inputImage);
                     ImageIO.write(VerticalImage, FileExtension, OutputImage);
@@ -441,7 +436,7 @@ public class ImageEditor {
                     BufferedImage HorizontalImage = horizantalInvert(inputImage);
                     ImageIO.write(HorizontalImage, FileExtension, OutputImage);
                     break;
-                
+
                 case 7:
                     System.out.print("Enter the No. of pixels to blur: ");
                     int Pixels = sc.nextInt();
@@ -469,16 +464,16 @@ public class ImageEditor {
 
                     BufferedInt CroppedImage = cropImage(inputImage, x, y, Height, Width);
 
-                    if(CroppedImage.possible){
+                    if (CroppedImage.possible) {
                         ImageIO.write(CroppedImage.OutputImage, FileExtension, OutputImage);
                         break;
                     }
 
-                    else{
+                    else {
                         System.out.println("Please Enter Valid Coordinate and Dimension values!");
                         break;
                     }
-                
+
                 case 10:
                     System.out.print("Enter 1 to keep Image's Red value: ");
                     int Red = sc.nextInt();
@@ -493,13 +488,13 @@ public class ImageEditor {
                     boolean G = false;
                     boolean B = false;
 
-                    if(Red == 1){
+                    if (Red == 1) {
                         R = true;
                     }
-                    if(Green == 1){
+                    if (Green == 1) {
                         G = true;
                     }
-                    if(Blue == 1){
+                    if (Blue == 1) {
                         B = true;
                     }
 
@@ -511,7 +506,7 @@ public class ImageEditor {
                     System.out.println("Successfully Exited Image Editor.");
                     break;
             }
-        } 
+        }
 
         catch (IOException e) {
             System.out.println("Please Enter Valid Image Path!");

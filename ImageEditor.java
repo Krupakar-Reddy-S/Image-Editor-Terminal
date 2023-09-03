@@ -294,7 +294,7 @@ public class ImageEditor {
         int height = input.getHeight();
         int width = input.getWidth();
 
-        BufferedImage OutputImage = new BufferedImage(Width, Height, BufferedImage.TYPE_3BYTE_BGR);
+        BufferedImage OutputImage = new BufferedImage(Width - y, Height - x, BufferedImage.TYPE_3BYTE_BGR);
         boolean Possible = true;
 
         BufferedInt Output = new BufferedInt(OutputImage, Possible);

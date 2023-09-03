@@ -19,12 +19,12 @@
 >
 > - **Problem:** Different File Formats can be given as input but for Output need to specify File Format in **ImageIO.write(RenderedImage im, String formatName, File output )**
 >
->> - **Solution:** Used String functions to get Substring after "**.**" and used it to pass **formatName** parameter to **ImageIO.write().**
-    >> ```java
-    >> System.out.print("Enter the path of image file: ");
-    >> String ImagePath = sc.nextLine();
-    >> String FileExtension = ImagePath.substring(ImagePath.lastIndexOf(".") + 1);
-    >>```
+> - **Solution:** Used String functions to get Substring after "**.**" and used it to pass **formatName** parameter to **ImageIO.write().**
+>>```java
+>> System.out.print("Enter the path of image file: ");
+>> String ImagePath = sc.nextLine();
+>> String FileExtension = ImagePath.substring(ImagePath.lastIndexOf(".") + 1);
+>>```
 >
 > - **Note:** This solution is effective and works well to read and write Images in the same Format.
 

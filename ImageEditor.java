@@ -39,25 +39,118 @@ public class ImageEditor {
                 int red = pixel.getRed();
                 int green = pixel.getGreen();
                 int blue = pixel.getBlue();
+
                 red += Brightness;
                 green += Brightness;
                 blue += Brightness;
-                if (red > 255)
+
+                if (red > 255){
                     red = 255;
-                if (green > 255)
+                }
+                if (green > 255){
                     green = 255;
-                if (blue > 255)
+                }
+                if (blue > 255){
                     blue = 255;
-                if (red < 0)
+                }
+                if (red < 0){
                     red = 0;
-                if (green < 0)
+                }
+                if (green < 0){
                     green = 0;
-                if (blue < 0)
+                }
+                if (blue < 0){
                     blue = 0;
-                Color newpixel = new Color(red, green, blue);
-                OutputImage.setRGB(j, i, newpixel.getRGB());
+                }
+
+                Color newPixel = new Color(red, green, blue);
+                OutputImage.setRGB(j, i, newPixel.getRGB());
             }
         }
+        return OutputImage;
+    }
+
+    public static BufferedImage changeContrast(BufferedImage input,int value) {
+        int height = input.getHeight();
+        int width = input.getWidth();
+        BufferedImage OutputImage = new BufferedImage(width, height, BufferedImage.TYPE_3BYTE_BGR);
+
+        int red = 0;
+        int green = 0;
+        int blue = 0;
+
+        for(int i = 0; i < height; i++){
+            for(int j = 0; j < width; j++){
+                Color pixel = new Color(input.getRGB(j, i));
+
+                red += pixel.getRed();
+                green += pixel.getGreen();
+                blue += pixel.getBlue();
+            }
+        }
+
+        int avgRed = red/ height * width;
+        int avgGreen = green/ height * width;
+        int avgBlue = blue/ height * width;
+
+        for(int i = 0; i < height; i++){
+            for(int j = 0; j < width; j++){
+                Color pixel = new Color(input.getRGB(j, i));
+                red = pixel.getRed();
+                green = pixel.getGreen();
+                blue = pixel.getBlue();
+
+                if(red + green + blue == 765){
+                    OutputImage.setRGB(j, i, pixel.getRGB());
+                }
+
+                else{
+                    if(red > avgRed){
+                        red += value;
+                    }
+                    else{
+                        red -= value;
+                    }
+
+                    if(green > avgGreen){
+                        green += value;
+                    }
+                    else{
+                        green -= value;
+                    }
+
+                    if(blue > avgBlue){
+                        blue += value;
+                    }
+                    else{
+                        blue -= value;
+                    }
+
+                    if (red > 255){
+                        red = 255;
+                    }
+                    if (green > 255){
+                        green = 255;
+                    }
+                    if (blue > 255){
+                        blue = 255;
+                    }
+                    if (red < 0){
+                        red = 0;
+                    }
+                    if (green < 0){
+                        green = 0;
+                    }
+                    if (blue < 0){
+                        blue = 0;
+                    }
+
+                    Color newPixel = new Color(red, green, blue);
+                    OutputImage.setRGB(j, i, newPixel.getRGB());
+                }
+            }
+        }
+
         return OutputImage;
     }
 
@@ -289,14 +382,15 @@ public class ImageEditor {
             System.out.println();
             System.out.println("1. Convert Image to Grayscale");
             System.out.println("2. Change Image Brightness");
-            System.out.println("3. Rotate Image");
-            System.out.println("4. Invert Image Vertically");
-            System.out.println("5. Invert Image Horizontally");
-            System.out.println("6. Apply Mosaic Blur");
-            System.out.println("7. Invert Image Colour");
-            System.out.println("8. Crop Image");
-            System.out.println("9. Colour Filter");
-            System.out.println("10. Exit");
+            System.out.println("3. Change Image Contrast");
+            System.out.println("4. Rotate Image");
+            System.out.println("5. Invert Image Vertically");
+            System.out.println("6. Invert Image Horizontally");
+            System.out.println("7. Apply Mosaic Blur");
+            System.out.println("8. Invert Image Colour");
+            System.out.println("9. Crop Image");
+            System.out.println("10. Colour Filter");
+            System.out.println("Enter Any other Number to Exit.");
             System.out.println();
 
             System.out.print("Enter the Operation to perform: ");
@@ -316,6 +410,13 @@ public class ImageEditor {
                     break;
 
                 case 3:
+                    System.out.print("Enter Contrast Value: ");
+                    int Value = sc.nextInt();
+                    BufferedImage ContrastImage = changeContrast(inputImage, Value);
+                    ImageIO.write(ContrastImage, FileExtension, OutputImage);
+                    break;
+
+                case 4:
                     System.out.print("Enter 1 to rotate right or 2 to rotate left: ");
                     int Direction = sc.nextInt();
                     if (Direction == 1) {
@@ -331,29 +432,29 @@ public class ImageEditor {
                     }
                     break;
                 
-                case 4:
+                case 5:
                     BufferedImage VerticalImage = verticalInvert(inputImage);
                     ImageIO.write(VerticalImage, FileExtension, OutputImage);
                     break;
 
-                case 5:
+                case 6:
                     BufferedImage HorizontalImage = horizantalInvert(inputImage);
                     ImageIO.write(HorizontalImage, FileExtension, OutputImage);
                     break;
                 
-                case 6:
+                case 7:
                     System.out.print("Enter the No. of pixels to blur: ");
                     int Pixels = sc.nextInt();
                     BufferedImage BlurredImage = mosaicBlur(inputImage, Pixels);
                     ImageIO.write(BlurredImage, FileExtension, OutputImage);
                     break;
 
-                case 7:
+                case 8:
                     BufferedImage ColourInvertedImage = colourInvert(inputImage);
                     ImageIO.write(ColourInvertedImage, FileExtension, OutputImage);
                     break;
 
-                case 8:
+                case 9:
                     System.out.print("Enter X coordinate to start Cropping from: ");
                     int x = sc.nextInt();
 
@@ -378,7 +479,7 @@ public class ImageEditor {
                         break;
                     }
                 
-                case 9:
+                case 10:
                     System.out.print("Enter 1 to keep Image's Red value: ");
                     int Red = sc.nextInt();
 
@@ -406,12 +507,8 @@ public class ImageEditor {
                     ImageIO.write(ColourFilteredImage, FileExtension, OutputImage);
                     break;
 
-                case 10:
-                    System.out.println("Successfully Exited Image Editor.");
-                    break;
-
                 default:
-                    ImageIO.write(inputImage, FileExtension, OutputImage);
+                    System.out.println("Successfully Exited Image Editor.");
                     break;
             }
         } 

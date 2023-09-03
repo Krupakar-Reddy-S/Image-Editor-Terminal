@@ -6,9 +6,9 @@
 > 
 > :heavy_exclamation_mark: This is not the Documentation for this project. Documnetation can be found here at [README.md](https://github.com/Krupakar-Reddy-S/Image-Editor-Terminal "Image Editor Repo")
 >
-> This project was a very Fun and Exiting experience for me, even though i am new to JAVA, I have to admit it is very powerful yet easy to understand.
+> This project was a very Fun and Exciting experience for me. Even though i am new to JAVA, I have to admit it is very powerful yet easy to understand.
 >
-> This also helped me to gain real world knowledge about Images and Their representation and much more about 2D Arrays Manipulation.
+> This project helped me to gain real world knowledge about Images, their representation and much more about 2D Arrays Manipulation.
 >
 > &nbsp;
 >
@@ -19,7 +19,7 @@
 >
 > - **Problem:** Different File Formats can be given as input but for Output need to specify File Format in **ImageIO.write(RenderedImage im, String formatName, File output )**
 >
-> - **Solution:** Used String functions to get Substring after "**.**" and used it to pass **formatName** parameter to **ImageIO.write().**
+> - **Solution:** Used String functions to get Substring after last occuring "**.**" and used it to pass **formatName** parameter to **ImageIO.write().**
 >>```java
 >> System.out.print("Enter the path of image file: ");
 >> String ImagePath = sc.nextLine();

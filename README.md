@@ -8,6 +8,7 @@
 ## Supported Operations
 - Convert Image to GrayScale
 - Change Image Brightness
+- Change Image Contrast
 - Rotate Image (Left, Right)
 - Flip Image (Vertical, Horizontal)
 - Blur Image (Mosaic)
@@ -68,6 +69,7 @@
 
 &nbsp; 
 
+> &nbsp;
 >   #### 1. convertToGrayScale(BufferedImage input)
 >   <img src="Assets/GreyScale.png" alt="LeftImage" width="600"/>
 >
@@ -91,35 +93,51 @@
 
 &nbsp;
 
->   #### 3. leftRotate(BufferedImage input)
+> #### 3. changeContrast(BufferedImage input, int value)
+>
+> - int value = 100;
+>
+>   <img src="Assets/ContrastIncreasedImage.png" alt="ContrastIncreasedImage" width="600"/>
+>
+> &nbsp;
+>
+> - int value = -100;
+>
+>   <img src="Assets/ContrastDecreasedImage.png" alt="ContrastDecreasedImage" width="600"/>
+>
+> &nbsp;
+
+&nbsp;
+
+>   #### 4. leftRotate(BufferedImage input)
 >   <img src="Assets/RotatedLeft.png" alt="LeftImage" width="400"/>
 >
 > &nbsp;
 
 &nbsp;
 
->   #### 4. rightRotate(BufferedImage input)
+>   #### 5. rightRotate(BufferedImage input)
 >   <img src="Assets/RotatedRight.png" alt="RightImage" width="400"/>
 >
 > &nbsp;
 
 &nbsp;
 
->   #### 5. verticalInvert(BufferedImage input)
+>   #### 6. verticalInvert(BufferedImage input)
 >   <img src="Assets/VerticallyInverted.png" alt="VerticalImage" width="600"/>
 >
 > &nbsp;
 
 &nbsp;
 
->   #### 6. horizontalInvert(BufferedImage input)
+>   #### 7. horizontalInvert(BufferedImage input)
 >   <img src="Assets/HorizontallyInverted.png" alt="HorizontalImage" width="600"/>
 >
 > &nbsp;
 
 &nbsp;
 
->   #### 7. mosaicBlur(BufferedImage input, int pixels)
+>   #### 8. mosaicBlur(BufferedImage input, int pixels)
 >
 > - int pixels = 5;
 >
@@ -135,21 +153,21 @@
 
 &nbsp;
 
->   #### 8. colourInvert(BufferedImage input)
->   <img src="Assets/ColourInverted.png" alt="HorizontalImage" width="600"/>
+>   #### 9. colourInvert(BufferedImage input)
+>   <img src="Assets/ColourInverted.png" alt="ColourInvertedImage" width="600"/>
 >
 > &nbsp;
 
 &nbsp;
 
->   #### 9. colourFilter(BufferedImage input, boolean R, boolean G, boolean B)
+>   #### 10. colourFilter(BufferedImage input, boolean R, boolean G, boolean B)
 >
 > - boolean R = true; 
 >   boolean G = false;
 >   boolean B = false; 
 >   
 >
->   <img src="Assets/RedFilter.png" alt="BrightImage" width="600"/>
+>   <img src="Assets/RedFilter.png" alt="RedImage" width="600"/>
 >
 > &nbsp;
 >
@@ -158,7 +176,7 @@
 >   boolean B = false; 
 >   
 >
->   <img src="Assets/GreenFilter.png" alt="BrightImage" width="600"/>
+>   <img src="Assets/GreenFilter.png" alt="GreenImage" width="600"/>
 >
 > &nbsp;
 > 
@@ -167,7 +185,7 @@
 >   boolean B = true; 
 >   
 >
->   <img src="Assets/BlueFilter.png" alt="BrightImage" width="600"/>
+>   <img src="Assets/BlueFilter.png" alt="BlueImage" width="600"/>
 >
 > &nbsp;
 >
@@ -176,7 +194,7 @@
 >   boolean B = false; 
 >   
 >
->   <img src="Assets/RedGreenFilter.png" alt="BrightImage" width="600"/>
+>   <img src="Assets/RedGreenFilter.png" alt="RedGreenImage" width="600"/>
 >
 > &nbsp;
 >
@@ -185,7 +203,7 @@
 >   boolean B = true; 
 >   
 >
->   <img src="Assets/RedBlueFilter.png" alt="BrightImage" width="600"/>
+>   <img src="Assets/RedBlueFilter.png" alt="RedBlueImage" width="600"/>
 >
 > &nbsp;
 > 
@@ -194,7 +212,8 @@
 >   boolean B = true; 
 >   
 >
->   <img src="Assets/GreenBlueFilter.png" alt="BrightImage" width="600"/>
+>   <img src="Assets/GreenBlueFilter.png" alt="GreenBlueImage" width="600"/>
 >
+> &nbsp;
 
 &nbsp;

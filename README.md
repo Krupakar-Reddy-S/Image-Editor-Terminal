@@ -13,7 +13,7 @@
 - Blur Image (Mosaic)
 - Invert Image Colour
 - Crop Image
-- Apply Colour Filters (RGB Channels)\
+- Apply Colour Filters (RGB Channels)
  
  :cool: Bonus: File Output Format is same as Input Image Format!
 

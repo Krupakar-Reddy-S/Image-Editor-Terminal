@@ -1,5 +1,5 @@
  # Image Editor Terminal Version
- ### By: Krupakar Reddy S
+### [BY: KRUPAKAR REDDY S](https://github.com/Krupakar-Reddy-S)
 
  This [Image Editor](https://github.com/Krupakar-Reddy-S/Image-Editor-Terminal "Link to Github Repo") is terminal based, where given an image file path and operation it outputs an image with the operation applied to it.
 

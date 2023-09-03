@@ -8,10 +8,14 @@
 ## Supported Operations
 - Convert Image to GrayScale
 - Change Image Brightness
-- Rotate Image
-- Flip Image
-- Blur Image
-- :cool: Bonus: File Output Format is same as Input Image Format!
+- Rotate Image (Left, Right)
+- Flip Image (Vertical, Horizontal)
+- Blur Image (Mosaic)
+- Invert Image Colour
+- Crop Image
+- Apply Colour Filters (RGB Channels)\
+ 
+ :cool: Bonus: File Output Format is same as Input Image Format!
 
 &nbsp;
 ## Imported Classes:
